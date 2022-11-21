@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dice Roll</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- The playing board --------------------------------- -->
+    <div class="grid-container">
+      <div class="grid-item" id="1">
+        1
+        <span class="dot1"></span>
+        <br />
+        <span class="dot2"></span>
+      </div>
+      <div class="grid-item" id="2">2</div>
+      <div class="grid-item" id="3">3</div>
+      <div class="grid-item" id="4">4</div>
+      <div class="grid-item" id="5">5</div>
+      <div class="grid-item" id="6">6</div>
+      <div class="grid-item" id="7">7 +5</div>
+      <div class="grid-item" id="8">8</div>
+      <div class="grid-item" id="9">9</div>
+      <div class="grid-item" id="10">10</div>
+      <div class="grid-item" id="11">11</div>
+      <div class="grid-item" id="12">12</div>
+      <div class="grid-item" id="13">13 -5</div>
+      <div class="grid-item" id="14">14</div>
+      <div class="grid-item" id="15">15</div>
+      <div class="grid-item" id="16">16</div>
+      <div class="grid-item" id="17">17</div>
+      <div class="grid-item" id="18">18</div>
+      <div class="grid-item" id="19">19</div>
+      <div class="grid-item" id="20">20</div>
+      <div class="grid-item" id="21">21</div>
+      <div class="grid-item" id="22">22</div>
+      <div class="grid-item" id="23">23</div>
+      <div class="grid-item" id="24">24</div>
+      <div class="grid-item" id="25">25 +10</div>
+      <div class="grid-item" id="26">26</div>
+      <div class="grid-item" id="27">27</div>
+      <div class="grid-item" id="28">28</div>
+      <div class="grid-item" id="29">29</div>
+      <div class="grid-item" id="30">30</div>
+      <div class="grid-item" id="31">31</div>
+      <div class="grid-item" id="32">32</div>
+      <div class="grid-item" id="33">33</div>
+      <div class="grid-item" id="34">34</div>
+      <div class="grid-item" id="35">35</div>
+      <div class="grid-item" id="36">36</div>
+      <div class="grid-item" id="37">37</div>
+      <div class="grid-item" id="38">38</div>
+      <div class="grid-item" id="39">39</div>
+      <div class="grid-item" id="40">40</div>
+      <div class="grid-item" id="41">41</div>
+      <div class="grid-item" id="42">42</div>
+      <div class="grid-item" id="43">43</div>
+      <div class="grid-item" id="44">44</div>
+      <div class="grid-item" id="45">45</div>
+      <div class="grid-item" id="46">46</div>
+      <div class="grid-item" id="47">47</div>
+      <div class="grid-item" id="48">48 -15</div>
+      <div class="grid-item" style="width: 90px" id="49">Finish<br /></div>
+    </div>
+    <!-- Dice elements -------------------------------------------------- -->
+    <div class="dice">
+      <ol class="die-list even-roll" data-roll="1" id="die-1">
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+      <ol class="die-list odd-roll" data-roll="1" id="die-2">
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+    </div>
+    <!-- Other site elements ------------------------------------------------ -->
+    <button type="button" id="roll-button">Roll Dice</button>
+    <button type="button" onClick="window.location.reload()">Reset Game</button>
+    <script src="./app.js"></script>
+  </body>
+  <script>
+    // Starting procedure
+    let player1Pos = 1;
+    let player2Pos = 1;
+    let userCount = 1;
+    window.alert(
+      "Welcome to the dice game! Roll the dice and try to reach the end before your opponent, watch out for the obstacles! Doubles will send you back the way you came!"
+    );
+    // Rolling and moving the player positions, includes all validation checks and components of the player positions
+    function rollDice() {
+      const dice = [...document.querySelectorAll(".die-list")];
+      let tempRoll = 0;
+      dice.forEach((die) => {
+        toggleClasses(die);
+        die.dataset.roll = getRandomNumber(1, 6);
+        let userRoll = parseInt(die.dataset.roll);
+        if (tempRoll == userRoll) {
+          window.alert(
+            "You rolled a double!, go back " + (tempRoll + userRoll) + " spaces"
+          );
+          if (tempRoll + userRoll > player1Pos - 1 && userCount % 2 == 1) {
+            player1Pos = 1;
+            tempRoll = 0;
+          } else if (
+            tempRoll + userRoll > player2Pos - 1 &&
+            userCount % 2 == 0
+          ) {
+            player2Pos = 1;
+            tempRoll = 0;
+          } else {
+            tempRoll = -tempRoll - userRoll;
+          }
+        } else {
+          tempRoll = tempRoll + userRoll;
+          console.log(tempRoll);
+        }
+      });
+      // Win check
+      if (player1Pos >= 49 || player2Pos >= 49) {
+        window.alert("You win! Press reset to restart");
+      } else {
+        // Checks who is rolling now
+        if (userCount % 2 != 0) {
+          originalPlayerPos = document.getElementById(player1Pos);
+          //Checks if they are on the same space and if they have just moved on to the finish line
+          if (player1Pos != player2Pos) {
+            originalPlayerPos.innerHTML = player1Pos;
+          } else {
+            originalPlayerPos.innerHTML =
+              player1Pos + "<span class='dot2'></span>";
+          }
+          player1Pos = player1Pos + tempRoll;
+          if (player1Pos >= 49 || player2Pos >= 49) {
+            newPlayerPos = document.getElementById("49");
+            addDot = newPlayerPos.innerHTML + "<span class='dot1'></span>";
+            newPlayerPos.innerHTML = addDot;
+            window.alert("You win! Press reset to restart");
+          }
+          // Assignment of the obstacle spaces for player 1
+          if (player1Pos == 7) {
+            player1Pos += 5;
+          } else if (player1Pos == 13) {
+            player1Pos -= 5;
+          } else if (player1Pos == 25) {
+            player1Pos += 10;
+          } else if (player1Pos == 48) {
+            player1Pos -= 15;
+          }
+          newPlayerPos = document.getElementById(player1Pos);
+          // Movement of the player
+          if (player1Pos != player2Pos) {
+            newPlayerPos = document.getElementById(player1Pos);
+            addDot = newPlayerPos.innerHTML + "<span class='dot1'></span>";
+          } else {
+            newPlayerPos = document.getElementById(player1Pos);
+            addDot = newPlayerPos.innerHTML + "<span class='dot1'></span>";
+          }
+
+          userCount += 1;
+
+          newPlayerPos.innerHTML = addDot;
+        } else {
+          originalPlayerPos = document.getElementById(player2Pos);
+
+          if (player1Pos != player2Pos) {
+            originalPlayerPos.innerHTML = player2Pos;
+          } else {
+            originalPlayerPos.innerHTML =
+              player2Pos + "<span class='dot1'></span>";
+          }
+          player2Pos = player2Pos + tempRoll;
+          // Movement of the player if past final space
+          if (player1Pos >= 49 || player2Pos >= 49) {
+            newPlayerPos = document.getElementById("49");
+            if (player1Pos >= 49) {
+              addDot = newPlayerPos.innerHTML + "<span class='dot1'></span>";
+            } else if (player2Pos >= 49) {
+              addDot = newPlayerPos.innerHTML + "<span class='dot2'></span>";
+            }
+            newPlayerPos.innerHTML = addDot;
+            window.alert("You win! Press reset to restart");
+          }
+          // Assignment of the obstacle spaces for player 2
+          if (player2Pos == 7) {
+            player2Pos += 5;
+          } else if (player2Pos == 13) {
+            player2Pos -= 5;
+          } else if (player2Pos == 25) {
+            player2Pos += 10;
+          } else if (player2Pos == 48) {
+            player2Pos -= 15;
+          }
+          // Movement of the player
+          if (player1Pos != player2Pos) {
+            newPlayerPos = document.getElementById(player2Pos);
+            addDot = newPlayerPos.innerHTML + "<span class='dot2'></span>";
+          } else {
+            newPlayerPos = document.getElementById(player2Pos);
+            addDot = newPlayerPos.innerHTML + "<span class='dot2'></span>";
+          }
+
+          userCount += 1;
+
+          newPlayerPos.innerHTML = addDot;
+        }
+      }
+    }
+
+    function toggleClasses(die) {
+      die.classList.toggle("odd-roll");
+      die.classList.toggle("even-roll");
+    }
+
+    function getRandomNumber(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.getElementById("roll-button").addEventListener("click", rollDice);
+  </script>
+</html>
